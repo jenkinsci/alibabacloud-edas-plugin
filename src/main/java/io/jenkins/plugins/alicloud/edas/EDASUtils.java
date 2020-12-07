@@ -68,7 +68,13 @@ public class EDASUtils {
         }
         String suffix = getSuffix(targetObject);
         File resultFile = File.createTempFile(rootFileObject.getBaseName(), suffix);
-        rootFileObject.copyTo(new FileOutputStream(resultFile));
+        FileOutputStream fs = new FileOutputStream(resultFile);
+        try {
+            rootFileObject.copyTo(fs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        fs.close();
 
         return resultFile;
     }

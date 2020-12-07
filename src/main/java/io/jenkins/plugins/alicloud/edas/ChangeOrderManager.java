@@ -45,7 +45,7 @@ public class ChangeOrderManager {
         GetChangeOrderInfoRequest request = new GetChangeOrderInfoRequest();
         request.setChangeOrderId(changeOrderId);
 
-        ChangeOrderTraceState beforeState = curTraceState.clone();
+        ChangeOrderTraceState beforeState = curTraceState.copy();
         try {
             GetChangeOrderInfoResponse response = defaultAcsClient.getAcsResponse(request);
             if (response.getCode() == 200) {

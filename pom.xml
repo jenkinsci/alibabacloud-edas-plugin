@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.jenkins.plugins</groupId>
     <artifactId>alibabacloud-edas</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <properties>
         <jenkins.version>2.190.1</jenkins.version>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>structs</artifactId>
-            <version>1.19</version>
+            <version>1.20</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
@@ -67,10 +67,6 @@
                     <groupId>com.aliyun</groupId>
                     <artifactId>aliyun-java-sdk-core</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.jenkins-ci.plugins</groupId>
-                    <artifactId>structs</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
     </dependencies>
@@ -86,4 +82,12 @@
             <url>https://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <developers>
+        <developer>
+            <id>jungle</id>
+            <name>Hellojungle</name>
+            <email>353187194@qq.com</email>
+        </developer>
+    </developers>
 </project>

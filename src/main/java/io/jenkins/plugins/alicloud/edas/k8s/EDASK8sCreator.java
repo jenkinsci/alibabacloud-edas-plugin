@@ -78,8 +78,8 @@ public class EDASK8sCreator {
             logger.log(Level.SEVERE, "upload package failed");
             return false;
         }
-        EDASUtils.edasLog(listener, String.format("package url %s\n", downloadUrl));
-        logger.log(Level.INFO, String.format("package url %s\n", downloadUrl));
+        EDASUtils.edasLog(listener, String.format("package url %s", downloadUrl));
+        logger.log(Level.INFO, String.format("package url %s", downloadUrl));
 
         String changeOrderIdInsert = doInsertApplication(downloadUrl);
         if (StringUtils.isBlank(changeOrderIdInsert)) {

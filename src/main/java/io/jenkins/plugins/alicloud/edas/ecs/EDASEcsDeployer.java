@@ -116,7 +116,7 @@ public class EDASEcsDeployer extends EDASDeployer {
         edasEcsConfig.setBatchWaitTime(batchWaitTime);
 
         long releaseType;
-        if (envSetup.getReleaseType().equals(ReleaseType.MANUAL)) {
+        if (envSetup.getReleaseType().equals(ReleaseType.MANUAL.getName())) {
             releaseType = 1;
         } else {
             releaseType = 0;

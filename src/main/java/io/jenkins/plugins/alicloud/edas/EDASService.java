@@ -230,7 +230,7 @@ public abstract class EDASService {
         String region = namespace.split(":")[0];
 
         try {
-            List<ListApplicationResponse.Application> apps = EDASService.getAllApps(
+            EDASService.getAllApps(
                 getAcsClient(credentialId, namespace, endpoint),
                 region, EDASUtils.ALL_NAMESPACE, ClusterType.ALL_KINDS.value());
         } catch (Exception e) {
