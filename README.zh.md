@@ -5,9 +5,11 @@
 使用前需要先配置全局证书
 
 ## 配置全局证书
-在系统配置页面设置阿里云的证书
+使用 `Alibaba Cloud Credentials` 插件配置证书.
 
-![Global Config](images/globalConfig.png)
+![Config-1](images/config-1.png)
+选择 `Alibaba Cloud Credentials` 然后输入 `Access Key ID` 和 `Secret Access Key`.
+![Config-2](images/config-2.png)
 
 配置完成后可以使用`Ping EDAS` 检测配置结果。
 
