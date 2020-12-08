@@ -74,7 +74,11 @@ public abstract class BaseOssUploader implements Uploader {
         upload(file, ossClient, bucket, key);
         ossClient.shutdown();
 
-        file.delete();
+        try {
+            file.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return downloadUrl;
     }
 
@@ -123,7 +127,7 @@ public abstract class BaseOssUploader implements Uploader {
                     long startPos = finali * uploadSize;
                     long curPartSize = (finali + 1 == MULTIPART_UPLOAD_COUNT) ? (fileLength - startPos) : uploadSize;
                     InputStream instream = new FileInputStream(file);
-                    instream.skip(startPos);
+                    long skip = instream.skip(startPos);
                     UploadPartRequest uploadPartRequest = new UploadPartRequest();
                     uploadPartRequest.setBucketName(bucketName);
                     uploadPartRequest.setKey(objectName);
@@ -133,6 +137,7 @@ public abstract class BaseOssUploader implements Uploader {
                     uploadPartRequest.setPartNumber(finali + 1);
                     UploadPartResult uploadPartResult = ossClient.uploadPart(uploadPartRequest);
                     tags.add(uploadPartResult.getPartETag());
+                    instream.close();
                 } catch (IOException e) {
                     logger.log(Level.SEVERE, e.getMessage());
                     throw new RuntimeException(e);

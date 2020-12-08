@@ -145,7 +145,7 @@ public class ChangeOrderTraceState {
         timeoutManager.setInstanceStageStartTime(-1);
     }
 
-    public ChangeOrderTraceState clone() {
+    public ChangeOrderTraceState copy() {
         ChangeOrderTraceState state = new ChangeOrderTraceState();
         state.setPipelineCounter(pipelineCounter);
         state.setStageCounter(stageCounter);

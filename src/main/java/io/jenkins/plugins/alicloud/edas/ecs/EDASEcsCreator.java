@@ -72,7 +72,7 @@ public class EDASEcsCreator {
             return false;
         }
         EDASUtils.edasLog(listener, String.format("package url %s", downloadUrl));
-        logger.log(Level.INFO, String.format("package url %s\n", downloadUrl));
+        logger.log(Level.INFO, String.format("package url %s", downloadUrl));
         String changeOrderId = doDeploy(downloadUrl);
         if (StringUtils.isBlank(changeOrderId)) {
             return false;
